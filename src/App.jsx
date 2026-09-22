@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import About from "./pages/About";
 import Home from "./pages/home";
-import Projects from "./pages/project";
+// import Projects from "./pages/project";
 import Jattari from "./pages/Jattari";
 import Amenities from "./pages/Amenities";
 import Location from "./pages/Location";
@@ -18,7 +18,7 @@ function App() {
 
            <Route path="/" element={<Home />} />
            <Route path="/about" element={<About />} />
-           <Route path="/projects" element={<Projects />} />
+           {/* <Route path="/projects" element={<Projects />} /> */}
            <Route path="/jattari" element={<Jattari />} />
            <Route path="/amenities" element={<Amenities />} />
            <Route path="/location" element={<Location />} />
