@@ -54,7 +54,7 @@ function BookSiteVisit() {
           className="absolute inset-0 h-full w-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-[#071d17]/80" />
+        <div className="absolute inset-0 bg-[#071d17]/100" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#071d17]/95 via-[#102d25]/70 to-transparent" />
 
         <div className="relative z-10 mx-auto flex min-h-[72vh] max-w-7xl items-center px-6 py-28 sm:px-8 lg:px-10">

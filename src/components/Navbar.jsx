@@ -14,7 +14,7 @@ function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 z-50 w-full">
-      <nav className="mx-auto mt-4 w-[94%] max-w-7xl">
+      <nav className="mx-auto mt-4 w-[94%] max-w-7x3">
         <div
           className="
             flex items-center justify-between
@@ -42,18 +42,18 @@ function Navbar() {
               "
             >
               <span className="font-serif text-xl font-semibold text-[#d8b56d]">
-                AH
+                JP
               </span>
             </div>
 
             {/* Brand Name */}
             <div className="hidden sm:block">
               <h1 className="font-serif text-lg font-semibold tracking-[0.18em] text-white">
-                ANUGRAH
+                JATTARI
               </h1>
 
               <p className="-mt-1 text-[9px] tracking-[0.38em] text-[#d8b56d]">
-                HOMES
+                PROPERTIES
               </p>
             </div>
           </a>

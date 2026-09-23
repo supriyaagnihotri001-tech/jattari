@@ -84,7 +84,7 @@ function Projects() {
           className="absolute inset-0 h-full w-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-[#071d17]/65" />
+        <div className="absolute inset-0 bg-[#071d17]/100" />
 
         <div className="absolute inset-0 bg-gradient-to-r from-[#071d17] via-[#071d17]/75 to-transparent" />
 

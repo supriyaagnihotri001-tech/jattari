@@ -14,7 +14,6 @@ import {
   Baby,
   Footprints,
   ArrowRight,
-  Sparkles,
 } from "lucide-react";
 const amenities = [
   {
@@ -113,16 +112,11 @@ function Amenities() {
           className="absolute inset-0 h-full w-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-[#071d17]/75" />
+        <div className="absolute inset-0 bg-[#071d17]/" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#071d17]/95 via-[#102d25]/70 to-transparent" />
 
         <div className="relative z-10 mx-auto flex min-h-[78vh] max-w-7xl items-center px-6 py-28 sm:px-8 lg:px-10">
           <div className="max-w-3xl">
-
-            <div className="mb-6 inline-flex items-center gap-2 border border-[#d8b56d]/50 bg-[#102d25]/50 px-4 py-2 text-xs uppercase tracking-[0.25em] text-[#f0d79f] backdrop-blur-md">
-              <Sparkles size={14} />
-              Elevated Everyday Living
-            </div>
 
             <p className="mb-5 text-sm uppercase tracking-[0.35em] text-[#d8b56d]">
               Anugrah Homes

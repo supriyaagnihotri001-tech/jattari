@@ -13,7 +13,7 @@ function Footer() {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-[#0c1c17] text-white ">
+    <footer className="relative overflow-hidden  text-white ">
 
       {/* =====================================================
           BACKGROUND DESIGN
@@ -158,18 +158,18 @@ function Footer() {
                   "
                 >
                   <span className="font-serif text-2xl font-semibold text-[#d7b56d]">
-                    AH
+                    JP
                   </span>
                 </div>
 
                 <div>
 
                   <h3 className="font-serif text-xl tracking-[0.18em] text-white">
-                    ANUGRAH
+                    JATTARI
                   </h3>
 
                   <p className="mt-1 text-[9px] tracking-[0.5em] text-[#d7b56d]">
-                    HOMES
+                    PROPERTIES
                   </p>
 
                 </div>

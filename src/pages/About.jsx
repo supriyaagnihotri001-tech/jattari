@@ -23,10 +23,10 @@ function About() {
         />
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-[#071d17]/70" />
+        <div className="absolute inset-0 bg-[#071d17]/" />
 
         {/* Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071d17] via-[#071d17]/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071d17] via-[#071d17]/20 to-transparent" />
 
         {/* Hero Content */}
         <div className="relative z-10 mx-auto flex min-h-[85vh] max-w-7xl items-end px-6 pb-20 pt-36 sm:px-8 lg:px-10 lg:pb-24">

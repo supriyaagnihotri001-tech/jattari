@@ -53,8 +53,8 @@ function Location() {
           className="absolute inset-0 h-full w-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-[#071d17]/75" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071d17]/95 via-[#102d25]/65 to-transparent" />
+        <div className="absolute inset-0 bg-[#071d17]/0" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071d17]/55 via-[#102d25]/40 to-transparent" />
 
         <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-7xl items-center px-6 py-28 sm:px-8 lg:px-10">
           <div className="max-w-3xl">
@@ -133,7 +133,7 @@ function Location() {
       </section>
 
       {/* CONNECTIVITY */}
-      <section className="bg-[#102d25] px-6 py-20 text-white sm:px-8 lg:px-10 lg:py-28">
+      <section className="bg-[#2a4d41]  px-6 py-20 text-white sm:px-8 lg:px-10 lg:py-28">
         <div className="mx-auto max-w-7xl">
 
           <div className="max-w-3xl">

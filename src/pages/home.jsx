@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -10,6 +11,15 @@ function Home() {
   const [] = useState(false);
   const [popupOpen, setPopupOpen] = useState(false);
   const [galleryImage, setGalleryImage] = useState(null);
+
+  // ABOUT SECTION IMAGE SLIDER
+  const aboutImages = [
+    "/Images/hero1.png",
+    "/Images/hero2.png",
+    "/Images/hero3.png",
+  ];
+
+  const [aboutImage, setAboutImage] = useState(0);
 
   const heroSlides = [
     {
@@ -74,20 +84,20 @@ function Home() {
     },
   ];
 
- const amenities = [
-  ["01", "24x7 Security", "Round-the-clock security", "/Images/plot1.png"],
-  ["02", "Commercial Center", "Everyday convenience", "/Images/plot2.png"],
-  ["03", "Parks", "Landscaped green spaces", "/Images/plot3.png"],
-  ["04", "Water Bodies", "Calm community spaces", "/Images/plot1.png"],
-  ["05", "Gym", "Fitness and wellness", "/Images/plot2.png"],
-  ["06", "Parking", "Convenient parking", "/Images/plot3.png"],
-  ["07", "Wi-Fi Zone", "Connected community", "/Images/plot1.png"],
-  ["08", "Cafe", "Relax and connect", "/Images/plot2.png"],
-  ["09", "Restaurant", "Dining within reach", "/Images/plot3.png"],
-  ["10", "Clubhouse", "Community gathering", "/Images/plot2.png"],
-  ["11", "Swimming Pool", "Leisure and recreation", "/Images/plot1.png"],
-  ["12", "Kids Play Zone", "Family-friendly spaces", "/Images/plot2.png"],
-];
+  const amenities = [
+    ["01", "24x7 Security", "Round-the-clock security", "/Images/plot1.png"],
+    ["02", "Commercial Center", "Everyday convenience", "/Images/plot2.png"],
+    ["03", "Parks", "Landscaped green spaces", "/Images/plot3.png"],
+    ["04", "Water Bodies", "Calm community spaces", "/Images/plot1.png"],
+    ["05", "Gym", "Fitness and wellness", "/Images/plot2.png"],
+    ["06", "Parking", "Convenient parking", "/Images/plot3.png"],
+    ["07", "Wi-Fi Zone", "Connected community", "/Images/plot1.png"],
+    ["08", "Cafe", "Relax and connect", "/Images/plot2.png"],
+    ["09", "Restaurant", "Dining within reach", "/Images/plot3.png"],
+    ["10", "Clubhouse", "Community gathering", "/Images/plot2.png"],
+    ["11", "Swimming Pool", "Leisure and recreation", "/Images/plot1.png"],
+    ["12", "Kids Play Zone", "Family-friendly spaces", "/Images/plot2.png"],
+  ];
 
   const gallery = [
     {
@@ -147,6 +157,21 @@ function Home() {
 
     return () => clearInterval(timer);
   }, [testimonials.length]);
+
+  // ABOUT SECTION: CHANGE IMAGE EVERY 3 SECONDS
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setAboutImage((previous) => {
+        if (previous === aboutImages.length - 1) {
+          return 0;
+        }
+
+        return previous + 1;
+      });
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, [aboutImages.length]);
 
   const nextHero = () => {
     setHeroSlide((previous) => (previous + 1) % heroSlides.length);
@@ -208,7 +233,7 @@ function Home() {
           </div>
         ))}
 
-        <div className="absolute inset-0 bg-gradient-to-r from-[#031710]/95 via-[#031710]/65 to-[#031710]/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#031710]/60 via-[#031710]/40 to-[#031710]/10" />
 
         <div className="absolute inset-0 bg-gradient-to-t from-[#031710] via-transparent to-black/20" />
 
@@ -270,7 +295,7 @@ function Home() {
 
             {/* PROPERTY SEARCH */}
 
-            <div className="w-full max-w-[370px] rounded-2xl bg-[#f7f5ef]/95 p-5 text-[#10251e] shadow-2xl backdrop-blur-xl sm:p-6 lg:justify-self-end">
+            <div className="w-full max-w-[370px] translate-y-6 rounded-2xl bg-[#f7f5ef]/95 p-5 text-[#10251e] shadow-2xl backdrop-blur-xl sm:translate-y-8 sm:p-6 lg:translate-y-16 lg:justify-self-end lg:translate-x-[-20px]">
 
               <span className="text-[8px] font-bold uppercase tracking-[0.25em] text-[#9a7433]">
                 PROPERTY SEARCH
@@ -425,21 +450,58 @@ function Home() {
       >
         <div className="mx-auto grid max-w-[1400px] gap-14 lg:grid-cols-12 lg:items-center">
 
-          <div
-              className="lg:col-span-5 bg-cover bg-center bg-no-repeat w-full h-[500px]"
-              style={{ backgroundImage: "url('/Images/hero1.png')" }}
-             >
-             <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#a07835]">
-              01 / About Anugrah
-             </span>
+          {/* ABOUT IMAGE SLIDER */}
 
-             <h2 className="mt-5 font-serif text-5xl leading-[0.94] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
-              More Than Plots,
+          <div className="relative h-[500px] w-full overflow-hidden rounded-2xl lg:col-span-5">
 
-              <span className="block italic text-[#a07835]">
-                A Lifestyle.
+            <img
+              src={aboutImages[aboutImage]}
+              alt="Anugrah Homes"
+              className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000"
+            />
+
+            {/* Image Overlay */}
+
+            <div className="absolute inset-0 bg-[#071d17]/25" />
+
+            {/* Image Content */}
+
+            <div className="relative z-10 p-7 sm:p-9">
+
+              <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#d8b56d]">
+                01 / About Anugrah
               </span>
-             </h2>
+
+              <h2 className="mt-5 font-serif text-5xl leading-[0.94] tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">
+                More Than Plots,
+
+                <span className="block italic text-[#d8b56d]">
+                  A Lifestyle.
+                </span>
+              </h2>
+
+            </div>
+
+            {/* Slider Indicators */}
+
+            <div className="absolute bottom-7 left-7 z-20 flex items-center gap-2">
+
+              {aboutImages.map((_, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  onClick={() => setAboutImage(index)}
+                  aria-label={`Show about image ${index + 1}`}
+                  className={`h-1.5 rounded-full transition-all duration-500 ${
+                    aboutImage === index
+                      ? "w-10 bg-[#d8b56d]"
+                      : "w-4 bg-white/50"
+                  }`}
+                />
+              ))}
+
+            </div>
+
           </div>
 
           <div className="lg:col-span-7">
@@ -470,11 +532,11 @@ function Home() {
 
       {/* ================= DIFFERENCE ================= */}
 
-        <section
-          id="projects"
-           className="bg-[#0a3427] px-5 py-24 text-white sm:px-8 lg:px-14 lg:py-32"
-           >
-         <div className="mx-auto max-w-[1400px]">
+      <section
+        id="projects"
+        className="bg-[#0a3427] px-5 py-24 text-white sm:px-8 lg:px-14 lg:py-32"
+      >
+        <div className="mx-auto max-w-[1400px]">
 
           <div className="flex flex-col justify-between gap-7 md:flex-row md:items-end">
 
@@ -499,114 +561,128 @@ function Home() {
 
           </div>
 
-         <div className="mt-14 grid gap-px overflow-hidden rounded-3xl bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
-  {[
-    [
-      "01",
-      "Prime Location",
-      "Near Yamuna Expressway, Jewar Airport and regional development corridors.",
-      "/Images/hero3.png",
-    ],
-    [
-      "02",
-      "Legally Verified",
-      "The project highlights transparent documentation and documentation support.",
-      "/Images/hero2.png",
-    ],
-    [
-      "03",
-      "Modern Amenities",
-      "Parks, gym, security, water bodies and community facilities.",
-      "/Images/hero1.png",
-    ],
-    [
-      "04",
-      "Well Planned",
-      "Thoughtful layouts with planned infrastructure and residential spaces.",
-      "/Images/plot2.png",
-    ],
-    [
-      "05",
-      "Customer First",
-      "Site visits, documentation assistance and support through the property journey.",
-      "/Images/plot1.png",
-    ],
-    [
-      "06",
-      "Connected Living",
-      "Connectivity toward Delhi, Ghaziabad, Greater Noida and nearby corridors.",
-      "/Images/plot3.png",
-    ],
-  ].map(([number, title, description, image]) => (
-    <div
-      key={number}
-      className="group relative min-h-[330px] overflow-hidden bg-[#102d25]"
-    >
-      {/* Background Image */}
-      <img
-        src={image}
-        alt={title}
-        className="absolute inset-0 h-full w-full object-cover transition duration-700 ease-out group-hover:scale-110"
-      />
+          <div className="mt-14 grid gap-px overflow-hidden rounded-3xl bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-[#071d17]/75 transition duration-500 group-hover:bg-[#071d17]/60" />
+            {[
+              [
+                "01",
+                "Prime Location",
+                "Near Yamuna Expressway, Jewar Airport and regional development corridors.",
+                "/Images/hero3.png",
+              ],
+              [
+                "02",
+                "Legally Verified",
+                "The project highlights transparent documentation and documentation support.",
+                "/Images/hero2.png",
+              ],
+              [
+                "03",
+                "Modern Amenities",
+                "Parks, gym, security, water bodies and community facilities.",
+                "/Images/hero1.png",
+              ],
+              [
+                "04",
+                "Well Planned",
+                "Thoughtful layouts with planned infrastructure and residential spaces.",
+                "/Images/plot2.png",
+              ],
+              [
+                "05",
+                "Customer First",
+                "Site visits, documentation assistance and support through the property journey.",
+                "/Images/plot1.png",
+              ],
+              [
+                "06",
+                "Connected Living",
+                "Connectivity toward Delhi, Ghaziabad, Greater Noida and nearby corridors.",
+                "/Images/plot3.png",
+              ],
+            ].map(([number, title, description, image]) => (
+              <div
+                key={number}
+                className="group relative min-h-[330px] overflow-hidden bg-[#102d25]"
+              >
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#071d17] via-[#102d25]/30 to-transparent" />
+                {/* Background Image */}
 
-      {/* Card Content */}
-      <div className="relative z-10 flex min-h-[330px] flex-col justify-between p-7 sm:p-8 lg:p-9">
-        
-        {/* Number */}
-        <div className="flex items-start justify-between">
-          <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#d8b56d]">
-            {number}
-          </span>
+                <img
+                  src={image}
+                  alt={title}
+                  className="absolute inset-0 h-full w-full object-cover transition duration-700 ease-out group-hover:scale-110"
+                />
 
-          <span className="font-serif text-5xl leading-none text-white/10 transition duration-500 group-hover:text-[#d8b56d]/20">
-            {number}
-          </span>
-        </div>
+                {/* Dark Overlay */}
 
-        {/* Bottom Content */}
-        <div>
-          <div className="mb-5 h-px w-10 bg-[#d8b56d] transition-all duration-500 group-hover:w-20" />
+                <div className="absolute inset-0 bg-[#071d17]/0 transition duration-500 group-hover:bg-[#071d17]/0" />
 
-          <h3 className="font-serif text-2xl leading-tight text-white sm:text-3xl">
-            {title}
-          </h3>
+                {/* Gradient Overlay */}
 
-          <p className="mt-3 max-w-sm text-sm leading-6 text-white/65">
-            {description}
-          </p>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071d17] via-[#102d25]/30 to-transparent" />
 
-          <div className="mt-5 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#d8b56d] opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-            Discover More
+                {/* Card Content */}
 
-            <span className="text-base transition-transform duration-300 group-hover:translate-x-1">
-              →
-            </span>
+                <div className="relative z-10 flex min-h-[330px] flex-col justify-between p-7 sm:p-8 lg:p-9">
+
+                  {/* Number */}
+
+                  <div className="flex items-start justify-between">
+
+                    <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#d8b56d]">
+                      {number}
+                    </span>
+
+                    <span className="font-serif text-5xl leading-none text-white/10 transition duration-500 group-hover:text-[#d8b56d]/20">
+                      {number}
+                    </span>
+
+                  </div>
+
+                  {/* Bottom Content */}
+
+                  <div>
+
+                    <div className="mb-5 h-px w-10 bg-[#d8b56d] transition-all duration-500 group-hover:w-20" />
+
+                    <h3 className="font-serif text-2xl leading-tight text-white sm:text-3xl">
+                      {title}
+                    </h3>
+
+                    <p className="mt-3 max-w-sm text-sm leading-6 text-white/65">
+                      {description}
+                    </p>
+
+                    <div className="mt-5 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#d8b56d] opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                      Discover More
+
+                      <span className="text-base transition-transform duration-300 group-hover:translate-x-1">
+                        →
+                      </span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            ))}
+
           </div>
         </div>
-      </div>
-    </div>
-  ))}
-</div>
-            </div>
       </section>
 
       {/* ================= PLOTS ================= */}
 
       <section
         id="price"
-        className="bg-[#f5f1e7] px-5 py-24 sm:px-8 lg:px-14 lg:py-32"
+         className="rounded-2xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur-sm sm:p-8"
       >
         <div className="mx-auto max-w-[1400px]">
 
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
 
             <div>
+
               <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#a07835]">
                 03 / Plot Collection
               </span>
@@ -618,6 +694,7 @@ function Home() {
                   right space.
                 </span>
               </h2>
+
             </div>
 
             <div className="flex gap-2">
@@ -729,34 +806,35 @@ function Home() {
 
           <div className="grid gap-12 lg:grid-cols-12">
 
-           <div className="lg:col-span-4">
+            <div className="lg:col-span-4">
 
-  <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#a07835]">
-    04 / Lifestyle
-  </span>
+              <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#a07835]">
+                04 / Lifestyle
+              </span>
 
-  <h2 className="mt-5 font-serif text-5xl leading-[0.92] sm:text-6xl lg:text-7xl">
-    Everything
+              <h2 className="mt-5 font-serif text-5xl leading-[0.92] sm:text-6xl lg:text-7xl">
+                Everything
 
-    <span className="block italic text-[#a07835]">
-      within reach.
-    </span>
-  </h2>
+                <span className="block italic text-[#a07835]">
+                  within reach.
+                </span>
+              </h2>
 
-  {/* Added text */}
-  <p className="mt-8 max-w-md text-sm leading-7 text-gray-600 sm:text-base">
-    Experience a thoughtfully planned lifestyle where everything you need
-    is within easy reach. From everyday conveniences and green spaces to
-    recreation, wellness and community facilities, Anugrah Homes is
-    designed to make modern living comfortable and enjoyable.
-  </p>
+              {/* Added text */}
 
-  <p className="mt-4 max-w-md text-sm leading-7 text-gray-500">
-    Every detail is planned to create a peaceful, connected and convenient
-    environment for you and your family.
-  </p>
+              <p className="mt-8 max-w-md text-sm leading-7 text-gray-600 sm:text-base">
+                Experience a thoughtfully planned lifestyle where everything you need
+                is within easy reach. From everyday conveniences and green spaces to
+                recreation, wellness and community facilities, Anugrah Homes is
+                designed to make modern living comfortable and enjoyable.
+              </p>
 
-</div>
+              <p className="mt-4 max-w-md text-sm leading-7 text-gray-500">
+                Every detail is planned to create a peaceful, connected and convenient
+                environment for you and your family.
+              </p>
+
+            </div>
 
             <div className="lg:col-span-8">
 
@@ -768,39 +846,47 @@ function Home() {
 
               <div className="mt-10 grid gap-px bg-black/10 sm:grid-cols-2 lg:grid-cols-3">
 
-               {amenities.map(([number, title, description, image]) => (
-  <div
-    key={number}
-    className="group relative min-h-[280px] overflow-hidden rounded-3xl"
-  >
-    {/* Background Image */}
-    <img
-      src={image}
-      alt={title}
-      className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
-    />
+                {amenities.map(([number, title, description, image]) => (
+                  <div
+                    key={number}
+                    className="group relative min-h-[280px] overflow-hidden rounded-3xl"
+                  >
 
-    {/* Dark Overlay */}
-    <div className="absolute inset-0 bg-[#102d25]/65 transition duration-500 group-hover:bg-[#102d25]/50" />
+                    {/* Background Image */}
 
-    {/* Content */}
-    <div className="relative z-10 flex h-full flex-col justify-between p-6">
-      <span className="text-sm font-semibold tracking-[0.2em] text-[#d8b56d]">
-        {number}
-      </span>
+                    <img
+                      src={image}
+                      alt={title}
+                      className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                    />
 
-      <div>
-        <h3 className="font-serif text-2xl text-white">
-          {title}
-        </h3>
+                    {/* Dark Overlay */}
 
-        <p className="mt-2 text-sm leading-6 text-white/70">
-          {description}
-        </p>
-      </div>
-    </div>
-  </div>
-))}
+                    <div className="absolute inset-0 bg-[#102d25]/65 transition duration-500 group-hover:bg-[#102d25]/50" />
+
+                    {/* Content */}
+
+                    <div className="relative z-10 flex h-full flex-col justify-between p-6">
+
+                      <span className="text-sm font-semibold tracking-[0.2em] text-[#d8b56d]">
+                        {number}
+                      </span>
+
+                      <div>
+
+                        <h3 className="font-serif text-2xl text-white">
+                          {title}
+                        </h3>
+
+                        <p className="mt-2 text-sm leading-6 text-white/70">
+                          {description}
+                        </p>
+
+                      </div>
+
+                    </div>
+                  </div>
+                ))}
 
               </div>
             </div>
@@ -849,6 +935,7 @@ function Home() {
                   key={label}
                   className="border border-black/10 bg-[#f5f1e7]/70 p-5"
                 >
+
                   <div className="font-serif text-2xl text-[#a07835]">
                     {value}
                   </div>
@@ -856,6 +943,7 @@ function Home() {
                   <p className="mt-2 text-[9px] uppercase tracking-[0.15em] text-black/45">
                     {label}
                   </p>
+
                 </div>
               ))}
 
@@ -867,7 +955,7 @@ function Home() {
             <img
               src="/Images/plot2.png"
               alt="Anugrah Homes"
-              className="absolute inset-0 h-full w-full object-cover opacity-60"
+              className="absolute inset-0 h-full w-full object-cover opacity-100"
             />
 
             <div className="absolute inset-0 bg-[#061d17]/50" />
@@ -947,6 +1035,7 @@ function Home() {
                 onClick={() => setGalleryImage(item.image)}
                 className="group relative min-w-[82vw] snap-start overflow-hidden rounded-xl text-left sm:min-w-[440px] lg:min-w-[430px]"
               >
+
                 <img
                   src={item.image}
                   alt={item.title}
@@ -1075,15 +1164,16 @@ function Home() {
 
           <div className="lg:col-span-4 lg:justify-self-end">
 
-            <button
-              type="button"
-              onClick={() => setPopupOpen(true)}
+            {/* CONTACT PAGE LINK */}
+
+            <Link
+              to="/BookSiteVisit"
               className="flex w-full items-center justify-between rounded-full bg-[#10251e] px-7 py-5 text-[9px] font-bold uppercase tracking-[0.18em] text-white transition hover:-translate-y-1 hover:bg-white hover:text-[#10251e] lg:min-w-[280px]"
             >
               Schedule Site Visit
 
               <span>→</span>
-            </button>
+            </Link>
 
           </div>
         </div>
@@ -1118,7 +1208,7 @@ function Home() {
             <div className="bg-[#0a3427] p-8 text-white">
 
               <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#dcb66a]">
-                ANUGRAH HOMES
+                JATTARI
               </span>
 
               <h3 className="mt-3 font-serif text-4xl">
@@ -1164,6 +1254,7 @@ function Home() {
                 defaultValue=""
                 className="w-full rounded-lg border border-black/10 bg-white px-4 py-4 text-sm outline-none focus:border-[#a07835]"
               >
+
                 <option value="" disabled>
                   Select Plot Size
                 </option>
@@ -1171,6 +1262,7 @@ function Home() {
                 <option>100 Sq. Yards</option>
                 <option>200 Sq. Yards</option>
                 <option>300 Sq. Yards</option>
+
               </select>
 
               <textarea
@@ -1242,13 +1334,12 @@ function Home() {
 
       {/* ================= MOBILE CTA ================= */}
 
-      <button
-        type="button"
-        onClick={() => setPopupOpen(true)}
+      <Link
+        to="/Contact"
         className="fixed bottom-4 left-1/2 z-[90] -translate-x-1/2 rounded-full bg-[#dcb66a] px-7 py-3 text-[9px] font-bold uppercase tracking-[0.15em] text-[#10251e] shadow-2xl sm:hidden"
-      >
+       >
         Book Site Visit
-      </button>
+      </Link>
 
       {/* ================= ANIMATION ================= */}
 

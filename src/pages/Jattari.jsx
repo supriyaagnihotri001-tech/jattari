@@ -69,9 +69,9 @@ function Jattari() {
           className="absolute inset-0 h-full w-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-[#071d17]/65" />
+        <div className="absolute inset-0 bg-[#071d17]/" />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071d17] via-[#071d17]/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071d17] via-[#071d17]/30 to-transparent" />
 
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#071d17] to-transparent" />
 
