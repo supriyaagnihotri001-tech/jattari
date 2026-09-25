@@ -12,8 +12,8 @@ function ScrollToTop() {
   return null;
 }
 import About from "./pages/About";
-import Home from "./pages/home";
-import Projects from "./pages/project";
+import Home from "./pages/Home";
+import Projects from "./pages/Project";
 import Jattari from "./pages/Jattari";
 import Amenities from "./pages/Amenities";
 import Location from "./pages/Location";
