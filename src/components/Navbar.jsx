@@ -6,10 +6,10 @@ function Navbar() {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/About" },
-   { name: "Project", href: "/projects" },
+   { name: "Project", href: "/Projects" },
     { name: "Why Jattari", href: "/Jattari" },
-    { name: "Amenities", href: "/amenities" },
-    { name: "Location", href: "/location" },
+    { name: "Amenities", href: "/Amenities" },
+    { name: "Location", href: "/Location" },
   ];
 
   return (
