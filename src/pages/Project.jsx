@@ -8,18 +8,21 @@ function Projects() {
       title: "100 Sq. Yards",
       subtitle: "Compact Luxury",
       text: "A thoughtfully planned plot option for creating a comfortable and elegant home.",
+      image: "/Images/hero1.png",
     },
     {
       number: "02",
       title: "200 Sq. Yards",
       subtitle: "Spacious Living",
       text: "Designed for families looking for generous space and the freedom to create a larger residence.",
+      image: "/Images/hero2.png",
     },
     {
       number: "03",
       title: "300 Sq. Yards",
       subtitle: "Premium Residence",
       text: "A larger plot option for those looking to create an expansive and refined residential space.",
+      image: "/Images/hero3.png",
     },
   ];
 
@@ -28,21 +31,25 @@ function Projects() {
       number: "01",
       title: "Precise Planning",
       text: "Thoughtful planning and execution with attention to every detail.",
+      image: "/Images/hero1.png",
     },
     {
       number: "02",
       title: "Timely Possession",
       text: "A development approach focused on committed and transparent timelines.",
+      image: "/Images/hero2.png",
     },
     {
       number: "03",
       title: "Modern Architecture",
       text: "Contemporary planning designed around comfort, functionality and lifestyle.",
+      image: "/Images/hero3.png",
     },
     {
       number: "04",
       title: "Strategic Location",
       text: "A well-connected location near major growth and infrastructure corridors.",
+      image: "/Images/hero1.png",
     },
   ];
 
@@ -77,16 +84,16 @@ function Projects() {
       {/* =========================================================
           HERO
       ========================================================= */}
-      <section className="relative min-h-[88vh] overflow-hidden bg-[#071d17]">
+      <section className="relative min-h-[88vh] overflow-hidden">
         <img
           src="/Images/hero1.png"
           alt="Anugrah Homes Project"
           className="absolute inset-0 h-full w-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-[#071d17]/100" />
+        <div className="absolute inset-0 bg-[#071d17]/" />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071d17] via-[#071d17]/75 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071d17] via-[#071d17]/45 to-transparent" />
 
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#071d17] to-transparent" />
 
@@ -146,7 +153,6 @@ function Projects() {
       >
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-20">
-            {/* IMAGE */}
             <div className="relative lg:col-span-7">
               <div className="relative overflow-hidden rounded-[2rem]">
                 <img
@@ -174,7 +180,6 @@ function Projects() {
                 </div>
               </div>
 
-              {/* Floating card */}
               <div className="absolute -bottom-7 right-5 rounded-2xl bg-[#102d25] px-6 py-5 shadow-2xl sm:right-8 sm:px-8 sm:py-6">
                 <p className="font-serif text-3xl text-[#d8b56d]">
                   Jattari
@@ -186,7 +191,6 @@ function Projects() {
               </div>
             </div>
 
-            {/* TEXT */}
             <div className="lg:col-span-5">
               <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#a07835]">
                 02 / Featured Development
@@ -216,6 +220,7 @@ function Projects() {
                   <p className="font-serif text-3xl text-[#102d25]">
                     Premium
                   </p>
+
                   <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.2em] text-[#7a847f]">
                     Residential Plots
                   </p>
@@ -225,6 +230,7 @@ function Projects() {
                   <p className="font-serif text-3xl text-[#102d25]">
                     Connected
                   </p>
+
                   <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.2em] text-[#7a847f]">
                     Location
                   </p>
@@ -246,68 +252,96 @@ function Projects() {
       {/* =========================================================
           DEVELOPMENT FEATURES
       ========================================================= */}
-      <section className="bg-[#17382f] py-20 sm:py-24 lg:py-32">
-           {/* Background Image */}
-           <img
-               src="/Images/hero3.png"
-                alt="Anugrah Homes Development"
-                className="absolute inset-0 h-full w-full object-cover"
-           />
-         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+      <section className="relative overflow-hidden bg-[#e7eee9] py-20 sm:py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-20">
             <div className="lg:col-span-4">
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#d8b56d]">
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#a07835]">
                 03 / Development
               </span>
 
-              <h2 className="mt-5 font-serif text-5xl leading-[0.92] tracking-[-0.04em] text-white sm:text-6xl">
+              <h2 className="mt-5 font-serif text-5xl leading-[0.92] tracking-[-0.04em] text-[#102d25] sm:text-6xl">
                 Planned With
-                <span className="block italic text-[#d8b56d]">
+                <span className="block italic text-[#a07835]">
                   Purpose.
                 </span>
               </h2>
 
-              <p className="mt-7 max-w-md text-sm leading-7 text-white/55 sm:text-base sm:leading-8">
+              <p className="mt-7 max-w-md text-sm leading-7 text-[#5f6d67] sm:text-base sm:leading-8">
                 Every aspect of the development is approached with a focus on
                 planning, functionality, architecture and location.
               </p>
+
+              <p className="mt-5 max-w-md text-sm leading-7 text-[#5f6d67] sm:text-base sm:leading-8">
+                From thoughtful layouts to connected infrastructure, every
+                detail is designed to create a comfortable and future-ready
+                residential environment.
+              </p>
+
+              <div className="mt-8 flex items-center gap-4">
+                <span className="h-px w-12 bg-[#d8b56d]" />
+
+                <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#7a847f]">
+                  Designed For Better Living
+                </span>
+              </div>
             </div>
 
             <div className="lg:col-span-8">
-              <div className="grid gap-px overflow-hidden rounded-[2rem] bg-white/10 sm:grid-cols-2">
+              <div className="grid gap-px overflow-hidden rounded-[2rem] bg-[#c8d3cc] sm:grid-cols-2">
                 {features.map((item) => (
                   <div
                     key={item.number}
-                    className="group min-h-[280px] bg-[#0d2821] p-7 transition duration-500 hover:bg-[#17352c] sm:p-9 lg:p-11"
+                    className="group relative min-h-[300px] overflow-hidden bg-[#102d25]"
                   >
-                    <div className="flex items-start justify-between">
-                      <span className="text-xs font-bold tracking-[0.25em] text-[#d8b56d]">
-                        {item.number}
-                      </span>
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                    />
 
-                      <span className="font-serif text-5xl text-white/5 transition group-hover:text-[#d8b56d]/15">
-                        {item.number}
-                      </span>
+                    <div className="absolute inset-0 bg-[#102d25]/25 transition-all duration-500 group-hover:bg-[#102d25]/45" />
+
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#071d17]/80 via-[#071d17]/20 to-transparent" />
+
+                    <div className="relative z-10 flex min-h-[300px] flex-col justify-between p-7 sm:p-9">
+                      <div className="flex items-start justify-between">
+                        <span className="text-xs font-bold tracking-[0.25em] text-[#d8b56d]">
+                          {item.number}
+                        </span>
+
+                        <span className="font-serif text-5xl text-white/25 transition-all duration-500 group-hover:text-[#d8b56d]/40">
+                          {item.number}
+                        </span>
+                      </div>
+
+                      <div>
+                        <h3 className="font-serif text-2xl text-white sm:text-3xl">
+                          {item.title}
+                        </h3>
+
+                        <p className="mt-4 max-w-md text-sm leading-7 text-white/75">
+                          {item.text}
+                        </p>
+
+                        <div className="mt-7 flex items-center gap-3">
+                          <div className="h-px w-10 bg-[#d8b56d] transition-all duration-500 group-hover:w-20" />
+
+                          <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/60 opacity-0 transition-all duration-500 group-hover:translate-x-1 group-hover:opacity-100">
+                            Explore
+                          </span>
+                        </div>
+                      </div>
                     </div>
 
-                    <div className="mt-16">
-                      <h3 className="font-serif text-2xl text-white sm:text-3xl">
-                        {item.title}
-                      </h3>
-
-                      <p className="mt-4 text-sm leading-7 text-white/50">
-                        {item.text}
-                      </p>
-
-                      <div className="mt-7 h-px w-10 bg-[#d8b56d] transition-all duration-500 group-hover:w-20" />
-                    </div>
+                    <div className="pointer-events-none absolute inset-0 rounded-[1.5rem] border border-transparent transition-all duration-500 group-hover:border-[#d8b56d]/40" />
                   </div>
                 ))}
               </div>
             </div>
           </div>
-         </div>
-       </section>
+        </div>
+      </section>
 
       {/* =========================================================
           PLOT OPTIONS
@@ -341,42 +375,53 @@ function Projects() {
             {plotTypes.map((plot) => (
               <div
                 key={plot.number}
-                className="group relative min-h-[420px] overflow-hidden rounded-[2rem] bg-[#102d25] p-7 transition duration-500 hover:-translate-y-2 sm:p-9"
+                className="group relative min-h-[420px] overflow-hidden rounded-[2rem] bg-[#102d25] transition duration-500 hover:-translate-y-2"
               >
-                {/* Decorative circle */}
-                <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full border border-[#d8b56d]/10 transition duration-700 group-hover:scale-125" />
+                <img
+                  src={plot.image}
+                  alt={plot.title}
+                  className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                />
 
-                <div className="relative flex items-start justify-between">
-                  <span className="text-xs font-bold tracking-[0.25em] text-[#d8b56d]">
-                    {plot.number}
-                  </span>
+                <div className="absolute inset-0 bg-[#102d25]/55 transition duration-500 group-hover:bg-[#102d25]/40" />
 
-                  <span className="font-serif text-6xl leading-none text-white/10">
-                    {plot.number}
-                  </span>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071d17]/85 via-[#071d17]/30 to-transparent" />
 
-                <div className="relative mt-28">
-                  <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#d8b56d]">
-                    {plot.subtitle}
-                  </p>
+                <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full border border-[#d8b56d]/20 transition duration-700 group-hover:scale-125" />
 
-                  <h3 className="mt-3 font-serif text-4xl leading-tight text-white sm:text-5xl">
-                    {plot.title}
-                  </h3>
-
-                  <p className="mt-5 text-sm leading-7 text-white/50">
-                    {plot.text}
-                  </p>
-
-                  <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-5">
-                    <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/40">
-                      Residential Plot
+                <div className="relative z-10 flex min-h-[420px] flex-col p-7 sm:p-9">
+                  <div className="flex items-start justify-between">
+                    <span className="text-xs font-bold tracking-[0.25em] text-[#d8b56d]">
+                      {plot.number}
                     </span>
 
-                    <span className="text-xl text-[#d8b56d] transition group-hover:translate-x-2">
-                      →
+                    <span className="font-serif text-6xl leading-none text-white/20 transition duration-500 group-hover:text-[#d8b56d]/35">
+                      {plot.number}
                     </span>
+                  </div>
+
+                  <div className="mt-auto">
+                    <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#d8b56d]">
+                      {plot.subtitle}
+                    </p>
+
+                    <h3 className="mt-3 font-serif text-4xl leading-tight text-white sm:text-5xl">
+                      {plot.title}
+                    </h3>
+
+                    <p className="mt-5 text-sm leading-7 text-white/65">
+                      {plot.text}
+                    </p>
+
+                    <div className="mt-8 flex items-center justify-between border-t border-white/20 pt-5">
+                      <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/50">
+                        Residential Plot
+                      </span>
+
+                      <span className="text-xl text-[#d8b56d] transition group-hover:translate-x-2">
+                        →
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -435,6 +480,7 @@ function Projects() {
                   <p className="font-serif text-3xl text-white sm:text-4xl">
                     01
                   </p>
+
                   <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.18em] text-white/40">
                     Community
                   </p>
@@ -444,6 +490,7 @@ function Projects() {
                   <p className="font-serif text-3xl text-white sm:text-4xl">
                     02
                   </p>
+
                   <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.18em] text-white/40">
                     Comfort
                   </p>
@@ -453,6 +500,7 @@ function Projects() {
                   <p className="font-serif text-3xl text-white sm:text-4xl">
                     03
                   </p>
+
                   <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.18em] text-white/40">
                     Connectivity
                   </p>
@@ -522,11 +570,13 @@ function Projects() {
       </section>
 
       {/* =========================================================
-          LOCATION
+          07 / LOCATION
       ========================================================= */}
       <section className="bg-[#102d25] py-20 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
+
+            {/* LEFT CONTENT */}
             <div>
               <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#d8b56d]">
                 07 / Location
@@ -540,11 +590,13 @@ function Projects() {
               </h2>
 
               <p className="mt-7 max-w-xl text-sm leading-7 text-white/55 sm:text-base sm:leading-8">
-                Anugrah Homes is positioned in Jattari, Aligarh, with access to
-                important highways, infrastructure corridors and emerging
-                development hubs.
+                Anugrah Homes is strategically located on Aligarh–Palwal Road
+                in Jattari, Aligarh, Uttar Pradesh, with convenient access to
+                the Yamuna Expressway, Noida International Airport and major
+                regional growth corridors.
               </p>
 
+              {/* LOCATION POINTS */}
               <div className="mt-9 grid grid-cols-2 gap-x-8 gap-y-5">
                 {locationPoints.map((point, index) => (
                   <div
@@ -555,29 +607,65 @@ function Projects() {
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
-                    <span className="text-sm text-white/70">{point}</span>
+                    <span className="text-sm text-white/70">
+                      {point}
+                    </span>
                   </div>
                 ))}
               </div>
+
+              {/* EXACT ADDRESS */}
+              <div className="mt-10 rounded-2xl border border-white/10 bg-white/[0.04] p-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#d8b56d] text-[#102d25]">
+                    📍
+                  </div>
+
+                  <div>
+                    <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#d8b56d]">
+                      Exact Project Address
+                    </p>
+
+                    <p className="mt-2 text-sm leading-6 text-white/80">
+                      Anugrah Homes,
+                      <br />
+                      Aligarh–Palwal Road,
+                      <br />
+                      Jattari, Aligarh,
+                      <br />
+                      Uttar Pradesh – 202137
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Location visual */}
+            {/* RIGHT LOCATION CARD */}
             <div className="relative">
               <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#17352c] p-3">
-                <div className="relative flex min-h-[480px] items-center justify-center overflow-hidden rounded-[1.5rem] bg-[#0b241d]">
-                  {/* Decorative map */}
+
+                <div className="relative flex min-h-[520px] items-center justify-center overflow-hidden rounded-[1.5rem] bg-[#0b241d]">
+
+                  {/* MAP GRID */}
                   <div className="absolute inset-0 opacity-20">
                     <div className="absolute left-1/4 top-0 h-full w-px rotate-[20deg] bg-[#d8b56d]" />
+
                     <div className="absolute left-1/2 top-0 h-full w-px -rotate-[35deg] bg-[#d8b56d]" />
+
                     <div className="absolute left-0 top-1/2 h-px w-full rotate-[12deg] bg-[#d8b56d]" />
+
                     <div className="absolute left-0 top-1/3 h-px w-full -rotate-[20deg] bg-[#d8b56d]" />
                   </div>
 
+                  {/* LOCATION PIN */}
                   <div className="relative z-10 text-center">
-                    <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-[#d8b56d]/40">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#d8b56d] text-[#102d25]">
-                        ●
+
+                    <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-[#d8b56d]/40 bg-[#102d25]/50 backdrop-blur-sm">
+
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#d8b56d] text-xl text-[#102d25] shadow-[0_0_40px_rgba(216,181,109,0.35)]">
+                        📍
                       </div>
+
                     </div>
 
                     <p className="mt-6 text-[9px] font-bold uppercase tracking-[0.3em] text-[#d8b56d]">
@@ -585,27 +673,60 @@ function Projects() {
                     </p>
 
                     <h3 className="mt-3 font-serif text-4xl text-white">
-                      Jattari
+                      Anugrah Homes
                     </h3>
 
                     <p className="mt-2 text-sm text-white/50">
-                      Aligarh, Uttar Pradesh
+                      Jattari, Aligarh
                     </p>
+
+                    <p className="mt-1 text-xs text-white/40">
+                      Uttar Pradesh – 202137
+                    </p>
+
+                    {/* GOOGLE MAPS BUTTON */}
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=28.02672,77.64618"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-7 inline-flex items-center gap-3 rounded-full bg-[#d8b56d] px-6 py-3 text-[9px] font-bold uppercase tracking-[0.18em] text-[#102d25] transition-all duration-300 hover:bg-white hover:-translate-y-1"
+                    >
+                      Open In Google Maps
+                      <span className="text-base">↗</span>
+                    </a>
+
                   </div>
 
-                  <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-black/20 p-5 backdrop-blur-md">
-                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/40">
+                  {/* BOTTOM ADDRESS CARD */}
+                  <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-black/30 p-5 backdrop-blur-md">
+
+                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#d8b56d]">
                       Strategic Location
                     </p>
 
                     <p className="mt-2 text-sm leading-6 text-white/70">
-                      Near Yamuna Expressway and major regional growth
-                      corridors.
+                      Aligarh–Palwal Road, Jattari, Aligarh, Uttar Pradesh
+                      – 202137
                     </p>
+
+                    <div className="mt-4 flex flex-wrap gap-2">
+
+                      <span className="rounded-full border border-white/10 px-3 py-1 text-[8px] uppercase tracking-[0.15em] text-white/50">
+                        Near Yamuna Expressway
+                      </span>
+
+                      <span className="rounded-full border border-white/10 px-3 py-1 text-[8px] uppercase tracking-[0.15em] text-white/50">
+                        Near Jewar Airport
+                      </span>
+
+                    </div>
+
                   </div>
+
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -634,6 +755,7 @@ function Projects() {
           </div>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
+
             {/* Layout */}
             <div className="group overflow-hidden rounded-[2rem] bg-[#102d25]">
               <div className="relative h-[360px] overflow-hidden">
@@ -703,6 +825,7 @@ function Projects() {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>

@@ -27,7 +27,7 @@ function Navbar() {
         >
           {/* ================= LOGO ================= */}
           <a
-            href="#home"
+            href="/"
             className="group flex items-center gap-3"
           >
             {/* Logo Mark */}

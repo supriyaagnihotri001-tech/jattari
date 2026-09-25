@@ -7,21 +7,25 @@ function Jattari() {
       number: "01",
       title: "Jewar Airport",
       text: "Access to Noida International Airport places the region within an important emerging connectivity corridor.",
+      image: "/Images/hero1.png",
     },
     {
       number: "02",
       title: "Yamuna Expressway",
       text: "Excellent road connectivity linking the region with Delhi, Noida and Greater Noida.",
+      image: "/Images/hero2.png",
     },
     {
       number: "03",
       title: "Defence Corridor",
       text: "The surrounding region benefits from proximity to the upcoming Defence Corridor and related development.",
+      image: "/Images/hero3.png",
     },
     {
       number: "04",
       title: "Film & Toy City",
       text: "Major planned development hubs around the region are creating new opportunities and infrastructure.",
+      image: "/Images/hero1.png",
     },
   ];
 
@@ -255,32 +259,44 @@ function Jattari() {
                 {growthHubs.map((item) => (
                   <div
                     key={item.number}
-                    className="group min-h-[300px] bg-[#17382f] p-7 transition duration-500 hover:bg-[#20473c] sm:p-9 lg:p-11"
+                    className="group relative min-h-[300px] overflow-hidden bg-[#17382f] p-7 transition duration-500 hover:bg-[#20473c] sm:p-9 lg:p-11"
                   >
 
-                    <div className="flex items-start justify-between">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                    />
 
-                      <span className="text-xs font-bold tracking-[0.25em] text-[#d8b56d]">
-                        {item.number}
-                      </span>
+                    <div className="absolute inset-0 bg-[#102d25]/75 transition duration-500 group-hover:bg-[#102d25]/60" />
 
-                      <span className="font-serif text-5xl text-white/5 transition group-hover:text-[#d8b56d]/15">
-                        {item.number}
-                      </span>
+                    <div className="relative z-10">
 
-                    </div>
+                      <div className="flex items-start justify-between">
 
-                    <div className="mt-16">
+                        <span className="text-xs font-bold tracking-[0.25em] text-[#d8b56d]">
+                          {item.number}
+                        </span>
 
-                      <h3 className="font-serif text-2xl text-white sm:text-3xl">
-                        {item.title}
-                      </h3>
+                        <span className="font-serif text-5xl text-white/10 transition group-hover:text-[#d8b56d]/20">
+                          {item.number}
+                        </span>
 
-                      <p className="mt-4 text-sm leading-7 text-white/55">
-                        {item.text}
-                      </p>
+                      </div>
 
-                      <div className="mt-7 h-px w-10 bg-[#d8b56d] transition-all duration-500 group-hover:w-20" />
+                      <div className="mt-16">
+
+                        <h3 className="font-serif text-2xl text-white sm:text-3xl">
+                          {item.title}
+                        </h3>
+
+                        <p className="mt-4 text-sm leading-7 text-white/65">
+                          {item.text}
+                        </p>
+
+                        <div className="mt-7 h-px w-10 bg-[#d8b56d] transition-all duration-500 group-hover:w-20" />
+
+                      </div>
 
                     </div>
 
@@ -418,15 +434,15 @@ function Jattari() {
       {/* ================= WHY JATTARI ================= */}
       <section className="relative overflow-hidden bg-[#071d17] py-20 sm:py-24 lg:py-32">
 
+        {/* FULL SECTION BACKGROUND IMAGE */}
         <img
-          src="/Images/hero1.png"
+          src="/Images/hero3.png"
           alt="Why Jattari"
           className="absolute inset-0 h-full w-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-[#071d17]/85" />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071d17] via-[#102d25]/90 to-[#071d17]/75" />
+        {/* LIGHT OVERLAY SO IMAGE IS CLEARLY VISIBLE */}
+        <div className="absolute inset-0 " />
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
 
@@ -450,7 +466,7 @@ function Jattari() {
             {advantages.map((item) => (
               <div
                 key={item.number}
-                className="group min-h-[330px] rounded-[2rem] border border-white/10 bg-[#102d25]/70 p-7 backdrop-blur-md transition duration-500 hover:-translate-y-2 hover:bg-[#17382f]/80 sm:p-9"
+                className="group min-h-[330px] rounded-[2rem] border border-white/10 bg-[#102d25]/30 p-7 backdrop-blur-md transition duration-500 hover:-translate-y-2 hover:bg-[#17382f]/30 sm:p-9"
               >
 
                 <span className="text-xs font-bold tracking-[0.25em] text-[#d8b56d]">

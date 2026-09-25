@@ -23,7 +23,7 @@ function About() {
         />
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-[#071d17]/" />
+        <div className="absolute inset-0 bg-[#071d17]/50" />
 
         {/* Gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#071d17] via-[#071d17]/20 to-transparent" />
@@ -198,7 +198,7 @@ function About() {
       {/* =====================================================
           MISSION / VISION
       ===================================================== */}
-      <section className="bg-[#102d25] py-20 sm:py-24 lg:py-28">
+      <section className="bg-[#1d4a3d] py-20 sm:py-24 lg:py-28">
 
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
 
@@ -487,51 +487,75 @@ function About() {
           <div className="mt-14 grid gap-5 md:grid-cols-3">
 
             {[
-              [
-                "01",
-                "Discover Your Dream Home",
-                "Explore a curated selection of properties designed around your lifestyle and requirements.",
-              ],
-              [
-                "02",
-                "Schedule A Viewing",
-                "Book a site visit at your convenience and experience the property in person.",
-              ],
-              [
-                "03",
-                "Seal The Deal",
-                "Receive guidance through documentation and the final stages of your property journey.",
-              ],
-            ].map(([number, title, description]) => (
+              {
+                number: "01",
+                title: "Discover Your Dream Home",
+                description:
+                  "Explore a curated selection of properties designed around your lifestyle and requirements.",
+                image: "/Images/hero1.png",
+              },
+              {
+                number: "02",
+                title: "Schedule A Viewing",
+                description:
+                  "Book a site visit at your convenience and experience the property in person.",
+                image: "/Images/hero2.png",
+              },
+              {
+                number: "03",
+                title: "Seal The Deal",
+                description:
+                  "Receive guidance through documentation and the final stages of your property journey.",
+                image: "/Images/hero3.png",
+              },
+            ].map((card) => (
 
               <div
-                key={number}
-                className="group relative overflow-hidden rounded-[2rem] bg-[#102d25] p-7 sm:p-9"
+                key={card.number}
+                className="group relative min-h-[380px] overflow-hidden rounded-[2rem] bg-[#102d25] p-7 sm:p-9"
               >
 
-                <div className="flex items-start justify-between">
+                {/* Background Image */}
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                />
 
-                  <span className="text-xs font-bold tracking-[0.25em] text-[#d8b56d]">
-                    {number}
-                  </span>
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-[#071d17]/ transition duration-500 group-hover:bg-[#071d17]/50" />
 
-                  <span className="font-serif text-6xl leading-none text-white/10 transition group-hover:text-[#d8b56d]/20">
-                    {number}
-                  </span>
+                {/* Bottom Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071d17] via-[#102d25]/40 to-transparent" />
 
-                </div>
+                {/* Card Content */}
+                <div className="relative z-10 flex h-full min-h-[326px] flex-col justify-between">
 
-                <div className="mt-20">
+                  <div className="flex items-start justify-between">
 
-                  <h3 className="font-serif text-2xl leading-tight text-white sm:text-3xl">
-                    {title}
-                  </h3>
+                    <span className="text-xs font-bold tracking-[0.25em] text-[#d8b56d]">
+                      {card.number}
+                    </span>
 
-                  <p className="mt-4 text-sm leading-7 text-white/55">
-                    {description}
-                  </p>
+                    <span className="font-serif text-6xl leading-none text-white/10 transition group-hover:text-[#d8b56d]/20">
+                      {card.number}
+                    </span>
 
-                  <div className="mt-7 h-px w-10 bg-[#d8b56d] transition-all duration-500 group-hover:w-20" />
+                  </div>
+
+                  <div className="mt-20">
+
+                    <h3 className="font-serif text-2xl leading-tight text-white sm:text-3xl">
+                      {card.title}
+                    </h3>
+
+                    <p className="mt-4 text-sm leading-7 text-white/70">
+                      {card.description}
+                    </p>
+
+                    <div className="mt-7 h-px w-10 bg-[#d8b56d] transition-all duration-500 group-hover:w-20" />
+
+                  </div>
 
                 </div>
 

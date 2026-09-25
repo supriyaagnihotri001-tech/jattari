@@ -11,6 +11,7 @@ function Home() {
   const [] = useState(false);
   const [popupOpen, setPopupOpen] = useState(false);
   const [galleryImage, setGalleryImage] = useState(null);
+  const [videoOpen, setVideoOpen] = useState(false);
 
   // ABOUT SECTION IMAGE SLIDER
   const aboutImages = [
@@ -280,9 +281,7 @@ function Home() {
 
                 <button
                   type="button"
-                  onClick={() =>
-                    alert("Add your Anugrah Homes project video here.")
-                  }
+                  onClick={() => setVideoOpen(true)}
                   className="flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-[10px] text-white backdrop-blur-md transition hover:border-[#dcb66a]"
                 >
                   <span className="grid h-9 w-9 place-items-center rounded-full border border-white/30">
@@ -806,7 +805,7 @@ function Home() {
 
           <div className="grid gap-12 lg:grid-cols-12">
 
-            <div className="lg:col-span-4">
+            <div className="flex h-full flex-col lg:col-span-4">
 
               <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#a07835]">
                 04 / Lifestyle
@@ -833,6 +832,73 @@ function Home() {
                 Every detail is planned to create a peaceful, connected and convenient
                 environment for you and your family.
               </p>
+
+              {/* Lifestyle Highlights */}
+
+              <div className="mt-10 border-t border-black/10 pt-6">
+
+                <div className="mb-5 flex items-center justify-between">
+                  <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#a07835]">
+                    Lifestyle at a glance
+                  </span>
+
+                  <span className="font-serif text-sm italic text-black/35">
+                    04
+                  </span>
+                </div>
+
+                <div className="space-y-4">
+
+                  {[
+                    [
+                      "01",
+                      "Green & Open",
+                      "Landscaped parks, open spaces and peaceful surroundings for everyday living.",
+                    ],
+                    [
+                      "02",
+                      "Wellness & Recreation",
+                      "Gym, swimming pool and activity spaces designed for a healthier routine.",
+                    ],
+                    [
+                      "03",
+                      "Daily Convenience",
+                      "Security, commercial facilities, parking, cafe and community spaces close to home.",
+                    ],
+                  ].map(([number, title, description]) => (
+                    <div
+                      key={number}
+                      className="group flex gap-4 border-b border-black/10 pb-4"
+                    >
+                      <span className="mt-1 text-[10px] font-bold tracking-[0.2em] text-[#a07835]">
+                        {number}
+                      </span>
+
+                      <div>
+                        <h3 className="font-serif text-xl text-[#102d25]">
+                          {title}
+                        </h3>
+
+                        <p className="mt-1 text-xs leading-5 text-black/45">
+                          {description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+
+                </div>
+
+              </div>
+
+              <div className="mt-8 rounded-2xl border border-[#a07835]/20 bg-[#f5f1e7]/70 p-5">
+                <p className="text-xs uppercase tracking-[0.18em] text-[#a07835]">
+                  More than a plot
+                </p>
+
+                <p className="mt-2 font-serif text-xl leading-snug text-[#102d25]">
+                  A connected community built around the way you want to live.
+                </p>
+              </div>
 
             </div>
 
@@ -1309,28 +1375,47 @@ function Home() {
 
         </div>
       )}
+      {/* ================= VIDEO POPUP ================= */}
 
-      {/* ================= FLOATING CONTACT ================= */}
-
-      <div className="fixed bottom-5 left-5 z-[100] flex flex-col gap-3">
-
-        <a
-          href="https://wa.me/917678279151"
-          target="_blank"
-          rel="noreferrer"
-          className="grid h-12 w-12 place-items-center rounded-full bg-[#25D366] text-[10px] font-bold text-white shadow-xl transition hover:-translate-y-1"
+      {videoOpen && (
+        <div
+          className="fixed inset-0 z-[300] grid place-items-center bg-black/90 p-5 backdrop-blur-md"
+          onClick={() => setVideoOpen(false)}
         >
-          WA
-        </a>
+          <div
+            className="relative w-full max-w-5xl overflow-hidden rounded-2xl bg-black shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          >
 
-        <a
-          href="tel:+917678279151"
-          className="grid h-12 w-12 place-items-center rounded-full bg-[#0a3427] text-lg text-white shadow-xl transition hover:-translate-y-1 hover:bg-[#dcb66a] hover:text-[#10251e]"
-        >
-          ☎
-        </a>
+            {/* CLOSE BUTTON */}
 
-      </div>
+            <button
+              type="button"
+              onClick={() => setVideoOpen(false)}
+              className="absolute right-4 top-4 z-10 grid h-10 w-10 place-items-center rounded-full bg-black/60 text-2xl text-white backdrop-blur-md hover:bg-[#dcb66a] hover:text-[#10251e]"
+              aria-label="Close video"
+            >
+              ×
+            </button>
+
+            {/* VIDEO */}
+
+            <video
+              controls
+              autoPlay
+              className="h-auto w-full"
+            >
+              <source
+                src="/Videos/jattari-project.mp4"
+                type="video/mp4"
+              />
+
+              Your browser does not support the video tag.
+            </video>
+
+          </div>
+        </div>
+      )}
 
       {/* ================= MOBILE CTA ================= */}
 

@@ -81,7 +81,7 @@ function Location() {
 
             <Link
               to="/book-site-visit"
-              className="mt-10 inline-flex items-center gap-3 bg-[#d8b56d] px-7 py-4 text-sm font-semibold uppercase tracking-wider text-[#102d25]"
+              className="mt-10 inline-flex items-center gap-3 rounded-2xl bg-[#d8b56d] px-7 py-4 text-sm font-semibold uppercase tracking-wider text-[#102d25]"
             >
               Explore the Location
               <ArrowRight size={18} />
